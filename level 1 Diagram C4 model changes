@@ -1,0 +1,11 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(personAlias, "User", "Internal employees")
+Container(containerAlias, " Electronic Health care record application","Agency")
+System(systemAlias, "Web application", "Java and Spring boot")
+
+Rel(personAlias, containerAlias, "Uses")
+Rel(personAlias,systemAlias,"HTTPS","via")
+Rel(containerAlias,systemAlias,"HTTPS","via")
+@enduml
